@@ -31,7 +31,7 @@ public class MenuControllerTest {
         when(menuService.save(new MenuDto("Noodles", 150))).thenReturn(new MenuDto(1,"Noodles", 150));
 
         // assert on data
-        mockMVC.perform(post("/menu")
+        mockMVC.perform(post("/menu/save")
                 .content("{\"menuItem\": \"Noodles\"," +
                         "\"price\": \"150\"}")
                 .contentType(MediaType.APPLICATION_JSON).accept(MediaType.APPLICATION_JSON)

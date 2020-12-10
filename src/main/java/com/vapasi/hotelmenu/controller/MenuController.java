@@ -22,8 +22,12 @@ public class MenuController {
         this.menuService = menuService;
     }
 
+    @GetMapping
+    public ResponseEntity<String> dispaly() {
+        return ResponseEntity.ok("Hi Kshama, How are you?");
+    }
 
-    @PostMapping
+    @PostMapping("/save")
     public ResponseEntity<MenuDto> saveMenu(@RequestBody MenuDto menu) throws URISyntaxException {
 
         return ResponseEntity.created(new URI("/menu")).body(menuService.save(menu));
