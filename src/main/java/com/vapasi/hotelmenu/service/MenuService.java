@@ -34,7 +34,7 @@ public class MenuService {
     public MenuDto updateMenu(MenuDto menu) {
         Menu menuItem = menuRepository.findByMenuItem(menu.getMenuItem());
         menuItem.setPrice(menu.getPrice());
-        
+        //menu change
         Menu savedMenuItem = menuRepository.save(menuItem);
         return new MenuDto(savedMenuItem.getId(), savedMenuItem.getMenuItem(), savedMenuItem.getPrice());
     }
